@@ -22,7 +22,5 @@ public class Imagen {
 
     @ManyToOne//(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "fk_personas", nullable = false)
-    //@OnDelete(action = OnDeleteAction.CASCADE)
-    //@JsonIgnore
     private Persona persona;
 }

@@ -8,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -67,54 +65,5 @@ public class PersonaServiceImpl implements PersonaService{
         personaRepository.deleteById(id);
         return persona;
     }
-
-//    @Override
-//    public List<Persona> getPersona(Long id) {
-//        List<Persona> list = new ArrayList<Persona>( personaRepository.findAll().size() );
-//        if (id==null){
-//            personaRepository.findAll().forEach(list::add);
-//        }else {
-//            personaRepository.findById(id).stream().forEach(list::add);
-//        }
-//        if (list.isEmpty()) {
-//            throw new ResourceNotFoundException("Not found Persona with id = " + id);
-//        }
-//        return list;
-//    }
-//
-//    @Override
-//    public Persona createPersona(Persona persona) {
-//        return personaRepository.save(persona);
-//    }
-//
-//
-//    @Override
-//    public Persona updatePersona(Persona personaDto, Long id) {
-//        Persona persona = personaRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not found Persona with id = " + id));
-//        return personaRepository.save(personaDto);
-//    }
-//    @Override
-//    public void deleteById(Long id) {
-//        Persona persona = personaRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Not found Persona with id = " + id));
-//        personaRepository.deleteById(id);
-//    }
-//
-//    public List<Persona> listAllPersonas() {
-//        List<Persona> list = new ArrayList<Persona>( personaRepository.findAll().size() );
-//        for (Persona persona : personaRepository.findAll()) {
-//            list.add(persona);
-//        }
-//        if (list.isEmpty()) {
-//            throw new ResourceNotFoundException("Not found Persona");
-//        }
-//        return personaRepository.findAll();
-//    }
-//    @Override
-//    public Optional<Persona> findById(Long id) {
-//        return personaRepository.findAll()
-//                .stream()
-//                .filter(e -> e.getId().equals(id))
-//                .findFirst();
-//    }
 
 }

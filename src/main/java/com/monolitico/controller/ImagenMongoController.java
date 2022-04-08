@@ -39,26 +39,4 @@ public class ImagenMongoController {
         ImagenMongoMysqlDto dto = personaMapper.ToImagenMongoDto(imagenMongoService.saveImagenMongo(imageFile,fk_persona));
         return ResponseEntity.status(HttpStatus.CREATED).body(dto);
     }
-
-//    @GetMapping(value = "/imgMongo", headers = "Accept=application/json")
-//    public ResponseEntity<List<ImagenMongoMysqlDto>> getAllImages(@RequestParam(required = false)  String id) {
-//        return new ResponseEntity<>(personaMapper.imagesToImagenAllDtos(imagenMongoService.getImgMongo(id)),//personaRepository.findById(id).get()
-//                HttpStatus.OK
-//        );
-//    }
-//    @PostMapping("/imgMongo")
-//    public ResponseEntity<ImagenMongoMysqlDto> create(@RequestParam("file") MultipartFile imageFile, @RequestParam String fk_persona) throws Exception {
-//        System.out.println("Controller "+imageFile.getOriginalFilename());
-//        return (ResponseEntity<ImagenMongoMysqlDto>)ResponseEntity.ok().body(personaMapper.imagenToImagenMongoDto(this.imagenMongoService.guardarImgMongo(imageFile,fk_persona)));
-//    }
-//    @PutMapping("/imgMongo/{id}")
-//    public ResponseEntity<ImagenMongoMysqlDto> updateImagen(@PathVariable("id") String id, @RequestParam("file") MultipartFile imageFile, @RequestParam String fk_persona) {
-//        return ResponseEntity.ok().body(personaMapper.imagenToImagenMongoDto(this.imagenMongoService.updateImagen(imageFile,fk_persona,id)));
-//
-//    }
-//    @DeleteMapping("/imgMongo/{id}")
-//    public ResponseEntity<String> deleteImagen(@PathVariable("id") String id) {
-//        imagenMongoService.deleteImagen(id);
-//        return ResponseEntity.ok().body("Imagen deleted with success!");
-//    }
 }
